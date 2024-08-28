@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Hacker's Terminal</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        #terminal {
+            flex-grow: 1;
+            overflow-y: auto;
+            border: 1px solid #00ff00;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #input {
+            background-color: #0a0a0a;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            padding: 5px;
+            width: calc(100% - 12px);
+        }
+        .command {
+            color: #ff00ff;
+        }
+        .error {
+            color: #ff0000;
+        }
+        @keyframes glitch {
+            0% {
+                text-shadow: 0.05em 0 0 #00fffc, -0.05em -0.025em 0 #fc00ff,
+                    0.025em 0.05em 0 #fffc00;
+            }
+            14% {
+                text-shadow: 0.05em 0 0 #00fffc, -0.05em -0.025em 0 #fc00ff,
+                    0.025em 0.05em 0 #fffc00;
+            }
+            15% {
+                text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.025em 0 #fc00ff,
+                    -0.05em -0.05em 0 #fffc00;
+            }
+            49% {
+                text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.025em 0 #fc00ff,
+                    -0.05em -0.05em 0 #fffc00;
+            }
+            50% {
+                text-shadow: 0.025em 0.05em 0 #00fffc, 0.05em 0 0 #fc00ff,
+                    0 -0.05em 0 #fffc00;
+            }
+            99% {
+                text-shadow: 0.025em 0.05em 0 #00fffc, 0.05em 0 0 #fc00ff,
+                    0 -0.05em 0 #fffc00;
+            }
+            100% {
+                text-shadow: -0.025em 0 0 #00fffc, -0.025em -0.025em 0 #fc00ff,
+                    -0.025em -0.05em 0 #fffc00;
+            }
+        }
+        .glitch {
+            animation: glitch 1s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal"></div>
+    <input type="text" id="input" placeholder="Enter command...">
+
+    <script>
+        const terminal = document.getElementById('terminal');
+        const input = document.getElementById('input');
+        const encryptedMessages = {
+            'decrypt': 'The future is now, old man.',
+            'access': 'Welcome to the matrix, Neo.',
+            'hack': 'System breached. Initiating data transfer...',
+            'run': 'Cybernetic enhancements activated.',
+        };
+
+        function addToTerminal(text, className = '') {
+            const p = document.createElement('p');
+            p.innerHTML = text;
+            p.className = className;
+            terminal.appendChild(p);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        function processCommand(cmd) {
+            addToTerminal(`> ${cmd}`, 'command');
+            
+            if (cmd.toLowerCase() in encryptedMessages) {
+                setTimeout(() => {
+                    addToTerminal('Decrypting...', 'glitch');
+                    setTimeout(() => {
+                        addToTerminal(encryptedMessages[cmd.toLowerCase()]);
+                    }, 1500);
+                }, 500);
+            } else {
+                addToTerminal('Command not recognized. Access denied.', 'error');
+            }
+        }
+
+        input.addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                const cmd = input.value.trim();
+                if (cmd) {
+                    processCommand(cmd);
+                    input.value = '';
+                }
+            }
+        });
+
+        // Initial message
+        addToTerminal('Cyberpunk Hacker\'s Terminal v1.0', 'glitch');
+        addToTerminal('Type a command to begin: decrypt, access, hack, run');
+    </script>
+</body>
+</html>
