@@ -4,122 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyberpunk Hacker's Terminal</title>
-    <style>
-        body {
-            background-color: #0a0a0a;
-            color: #00ff00;
-            font-family: 'Courier New', monospace;
-            margin: 0;
-            padding: 20px;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        #terminal {
-            flex-grow: 1;
-            overflow-y: auto;
-            border: 1px solid #00ff00;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-        #input {
-            background-color: #0a0a0a;
-            color: #00ff00;
-            border: 1px solid #00ff00;
-            padding: 5px;
-            width: calc(100% - 12px);
-        }
-        .command {
-            color: #ff00ff;
-        }
-        .error {
-            color: #ff0000;
-        }
-        @keyframes glitch {
-            0% {
-                text-shadow: 0.05em 0 0 #00fffc, -0.05em -0.025em 0 #fc00ff,
-                    0.025em 0.05em 0 #fffc00;
-            }
-            14% {
-                text-shadow: 0.05em 0 0 #00fffc, -0.05em -0.025em 0 #fc00ff,
-                    0.025em 0.05em 0 #fffc00;
-            }
-            15% {
-                text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.025em 0 #fc00ff,
-                    -0.05em -0.05em 0 #fffc00;
-            }
-            49% {
-                text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.025em 0 #fc00ff,
-                    -0.05em -0.05em 0 #fffc00;
-            }
-            50% {
-                text-shadow: 0.025em 0.05em 0 #00fffc, 0.05em 0 0 #fc00ff,
-                    0 -0.05em 0 #fffc00;
-            }
-            99% {
-                text-shadow: 0.025em 0.05em 0 #00fffc, 0.05em 0 0 #fc00ff,
-                    0 -0.05em 0 #fffc00;
-            }
-            100% {
-                text-shadow: -0.025em 0 0 #00fffc, -0.025em -0.025em 0 #fc00ff,
-                    -0.025em -0.05em 0 #fffc00;
-            }
-        }
-        .glitch {
-            animation: glitch 1s linear infinite;
-        }
-    </style>
-</head>
+   <link rel="stylesheet" href="./sytles.css">
+  </head>
 <body>
     <div id="terminal"></div>
     <input type="text" id="input" placeholder="Enter command...">
 
     <script>
-        const terminal = document.getElementById('terminal');
-        const input = document.getElementById('input');
-        const encryptedMessages = {
-            'decrypt': 'The future is now, old man.',
-            'access': 'Welcome to the matrix, Neo.',
-            'hack': 'System breached. Initiating data transfer...',
-            'run': 'Cybernetic enhancements activated.',
-        };
-
-        function addToTerminal(text, className = '') {
-            const p = document.createElement('p');
-            p.innerHTML = text;
-            p.className = className;
-            terminal.appendChild(p);
-            terminal.scrollTop = terminal.scrollHeight;
-        }
-
-        function processCommand(cmd) {
-            addToTerminal(`> ${cmd}`, 'command');
-            
-            if (cmd.toLowerCase() in encryptedMessages) {
-                setTimeout(() => {
-                    addToTerminal('Decrypting...', 'glitch');
-                    setTimeout(() => {
-                        addToTerminal(encryptedMessages[cmd.toLowerCase()]);
-                    }, 1500);
-                }, 500);
-            } else {
-                addToTerminal('Command not recognized. Access denied.', 'error');
-            }
-        }
-
-        input.addEventListener('keyup', function(event) {
-            if (event.key === 'Enter') {
-                const cmd = input.value.trim();
-                if (cmd) {
-                    processCommand(cmd);
-                    input.value = '';
-                }
-            }
-        });
-
-        // Initial message
-        addToTerminal('Cyberpunk Hacker\'s Terminal v1.0', 'glitch');
-        addToTerminal('Type a command to begin: decrypt, access, hack, run');
+      const _0x138c28=_0x3e51;function _0x3e51(_0x16b5ab,_0x2c5d4c){const _0x1738b2=_0x5a68();return _0x3e51=function(_0x1884ae,_0x5458d8){_0x1884ae=_0x1884ae-(0x6*-0x194+0x1b4f+-0x102a);let _0x14291b=_0x1738b2[_0x1884ae];return _0x14291b;},_0x3e51(_0x16b5ab,_0x2c5d4c);}function _0x5a68(){const _0x454880=['getElement','mand\x20to\x20be','jUFvP3y6mr','7kGfOMi','\x20enhanceme','erminal\x20v1','10VMwopq','\x20the\x20matri','scrollTop','Decrypting','pt,\x20access','className','command','glitch','value','r...','terminal','NxWIM','neQMD','createElem','6466338kFiGpq','ted.','zslHg','Enter','YmcF1F55RS','ta\x20transfe','error','ld\x20man.','...','key','scrollHeig','CKbFz','9588808fHULya','VKIHv','x,\x20Neo.','rPunk_l4TJ','ent','3580ZMzaLy','DlJAK','The\x20future','keyup','Akcce','xwJmo','toLowerCas','cOHqk8}','innerHTML','ed.\x20Access','xzaEb','stener','AwdVQ','Type\x20a\x20com','TAzim','Command\x20no','ById','addEventLi','nts\x20activa','30107759rRnBYF','xXDAc','ached.\x20Ini','t\x20recogniz','\x20is\x20now,\x20o','appendChil',',\x20hack,\x20ru','Hacker\x27s\x20T','Cybernetic','\x20denied.','QxeFz','input','tiating\x20da','gin:\x20decry','System\x20bre','trim','Cyberpunk\x20','ELITE{Cyb3','18varfLb','Welcome\x20to','AiWby','eiFrD','832221WFaqLq','kGfTq','6115MXnHfJ','12699NPEqYS','64707oaNOob'];_0x5a68=function(){return _0x454880;};return _0x5a68();}(function(_0x58fbc1,_0x54e508){const _0x178502=_0x3e51,_0x4ba9b6=_0x58fbc1();while(!![]){try{const _0x4fa4a0=-parseInt(_0x178502(0x1b6))/(0x6*-0x501+0x552+0x18b5)+parseInt(_0x178502(0x1b2))/(0x799*0x5+0x0+0x1*-0x25fb)*(-parseInt(_0x178502(0x1ba))/(-0x593*0x6+-0x1721+0x3896))+-parseInt(_0x178502(0x1e0))/(-0x3*0x785+0x1f*0xf1+-0xbc*0x9)*(parseInt(_0x178502(0x1b8))/(-0x2142*0x1+0x25*0x92+0xc2d))+-parseInt(_0x178502(0x1cf))/(-0x11e1+-0x16f1*0x1+0x28d8)+parseInt(_0x178502(0x1be))/(0x1fb1+0x19ab*0x1+-0x469*0xd)*(parseInt(_0x178502(0x1db))/(0x12bc+-0x1*0x165e+0x3aa))+-parseInt(_0x178502(0x1b9))/(-0x184a+-0x839+0x208c*0x1)*(parseInt(_0x178502(0x1c1))/(0x148*-0x10+0x249d+-0x1013))+parseInt(_0x178502(0x1f3))/(-0x682+-0x2*0x90a+0x61*0x41);if(_0x4fa4a0===_0x54e508)break;else _0x4ba9b6['push'](_0x4ba9b6['shift']());}catch(_0x22547f){_0x4ba9b6['push'](_0x4ba9b6['shift']());}}}(_0x5a68,0xb*-0x13d5d+0x7435*0x9+0x14c69b));const terminal=document[_0x138c28(0x1bb)+_0x138c28(0x1f0)](_0x138c28(0x1cb)),input=document[_0x138c28(0x1bb)+_0x138c28(0x1f0)](_0x138c28(0x1fe)),encryptedMessages={'decrypt':_0x138c28(0x1e2)+_0x138c28(0x1f7)+_0x138c28(0x1d6),'access':_0x138c28(0x1b3)+_0x138c28(0x1c2)+_0x138c28(0x1dd),'hack':_0x138c28(0x1ae)+_0x138c28(0x1f5)+_0x138c28(0x1ff)+_0x138c28(0x1d4)+_0x138c28(0x1ca),'run':_0x138c28(0x1fb)+_0x138c28(0x1bf)+_0x138c28(0x1f2)+_0x138c28(0x1d0)};function addToTerminal(_0x948d84,_0x77a41f=''){const _0x3bfd9f=_0x138c28,_0x24dc48=document[_0x3bfd9f(0x1ce)+_0x3bfd9f(0x1df)]('p');_0x24dc48[_0x3bfd9f(0x1e8)]=_0x948d84,_0x24dc48[_0x3bfd9f(0x1c6)]=_0x77a41f,terminal[_0x3bfd9f(0x1f8)+'d'](_0x24dc48),terminal[_0x3bfd9f(0x1c3)]=terminal[_0x3bfd9f(0x1d9)+'ht'];}function processCommand(_0x41d9c4){const _0x4c7241=_0x138c28,_0x201dd2={'CKbFz':function(_0x4a51db,_0x5b6e4e){return _0x4a51db(_0x5b6e4e);},'xXDAc':function(_0x5d19a8,_0xc5ddb6,_0x2a6b67){return _0x5d19a8(_0xc5ddb6,_0x2a6b67);},'Akcce':_0x4c7241(0x1c4)+_0x4c7241(0x1d7),'AwdVQ':_0x4c7241(0x1c8),'neQMD':function(_0x2a25eb,_0x32031d,_0x5958fa){return _0x2a25eb(_0x32031d,_0x5958fa);},'VKIHv':function(_0x9fb226,_0x103a79,_0x62ec92){return _0x9fb226(_0x103a79,_0x62ec92);},'TAzim':_0x4c7241(0x1c7),'NxWIM':_0x4c7241(0x1b1)+_0x4c7241(0x1de)+_0x4c7241(0x1bd)+_0x4c7241(0x1d3)+_0x4c7241(0x1e7),'xzaEb':function(_0x250af3,_0x571204){return _0x250af3 in _0x571204;},'AiWby':function(_0x2aee8f,_0x2415d6,_0x66bc2c){return _0x2aee8f(_0x2415d6,_0x66bc2c);},'zslHg':_0x4c7241(0x1ef)+_0x4c7241(0x1f6)+_0x4c7241(0x1e9)+_0x4c7241(0x1fc),'DlJAK':_0x4c7241(0x1d5)};_0x201dd2[_0x4c7241(0x1dc)](addToTerminal,'>\x20'+_0x41d9c4,_0x201dd2[_0x4c7241(0x1ee)]);var _0xd2e118=_0x201dd2[_0x4c7241(0x1cc)];_0x201dd2[_0x4c7241(0x1ea)](_0x41d9c4[_0x4c7241(0x1e6)+'e'](),encryptedMessages)?_0x201dd2[_0x4c7241(0x1f4)](setTimeout,()=>{const _0x179eff=_0x4c7241,_0x44c01a={'kGfTq':function(_0x22ae3b,_0x314b84){const _0x33f9ab=_0x3e51;return _0x201dd2[_0x33f9ab(0x1da)](_0x22ae3b,_0x314b84);}};_0x201dd2[_0x179eff(0x1f4)](addToTerminal,_0x201dd2[_0x179eff(0x1e4)],_0x201dd2[_0x179eff(0x1ec)]),_0x201dd2[_0x179eff(0x1cd)](setTimeout,()=>{const _0x4a1068=_0x179eff;_0x44c01a[_0x4a1068(0x1b7)](addToTerminal,encryptedMessages[_0x41d9c4[_0x4a1068(0x1e6)+'e']()]);},-0x1673+-0x1*0x577+0x21c6);},-0xa4*-0x20+-0x1aec+0x20*0x43):_0x201dd2[_0x4c7241(0x1b4)](addToTerminal,_0x201dd2[_0x4c7241(0x1d1)],_0x201dd2[_0x4c7241(0x1e1)]);}input[_0x138c28(0x1f1)+_0x138c28(0x1eb)](_0x138c28(0x1e3),function(_0x4450ee){const _0x1101a5=_0x138c28,_0x897a74={'QxeFz':function(_0x567fa1,_0x48d6e9){return _0x567fa1===_0x48d6e9;},'xwJmo':_0x1101a5(0x1d2),'eiFrD':function(_0x293ac4,_0x2e6b17){return _0x293ac4(_0x2e6b17);}};if(_0x897a74[_0x1101a5(0x1fd)](_0x4450ee[_0x1101a5(0x1d8)],_0x897a74[_0x1101a5(0x1e5)])){const _0x415611=input[_0x1101a5(0x1c9)][_0x1101a5(0x1af)]();_0x415611&&(_0x897a74[_0x1101a5(0x1b5)](processCommand,_0x415611),input[_0x1101a5(0x1c9)]='');}}),addToTerminal(_0x138c28(0x1b0)+_0x138c28(0x1fa)+_0x138c28(0x1c0)+'.0',_0x138c28(0x1c8)),addToTerminal(_0x138c28(0x1ed)+_0x138c28(0x1bc)+_0x138c28(0x1ad)+_0x138c28(0x1c5)+_0x138c28(0x1f9)+'n');
     </script>
 </body>
 </html>
